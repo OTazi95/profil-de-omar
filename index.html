@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="profil_avance.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Web Personnel</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Mr Omar Tazi</h1>
+    <div>
+        <table style="padding: 30px ;margin: auto;
+        text-align: center;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);background-color: brown; color: #fff;">
+            <tr>   
+                <td><a href="#Présentation">Présentation</a></td>
+                <td><a href="#Mes_Hobbies">Hobbies</a></td>
+                <td><a href="#Mes_ambitions_pour_cette_année">Ambitions</a></td>
+                <td><a href="#Listes_des_amis">Amis</a></td>       
+                <td><a href="#Formulaire_de_contact">Me Contacter</a></td>    
+            </tr>
+        </table>
+    </div> 
+<section>
+<img src="C:\Users\OMAR\OneDrive\Bureau\Stage Biblio Sekkat\Photo Omar Tazi.jpg">
+</section><br><br><br><br><br>
+    <section>
+        <h2 id="Présentation">Présentation :</h2><br>
+        <p>Je suis <strong>Omar Tazi</strong>, agé de 20 ans, je suis actuellement étudiant en 3<sup>ieme</sup> année en cycle d'ingénieurie informatique et réseaux
+        à EMSI Casablanca les Orangées.<br>
+        Autonome, dévoué et ambitieux mon objectif principale est de parvenir à acquerir les compétences nécéssaire pour devenir un ingenieur en informatique.</p>
+    </section><br><br><br><br><br>
+    <section>
+  <h2 id="Mes_Hobbies">Mes Hobbies :</h2><br>
+  <ul>
+    <li>Passionné d'automobile.</li>
+    <li>Natation.</li>
+    <li>Voyage.</li>
+</ul>
+  </section><br><br><br><br><br>
+  <section>
+    <h2 id="Mes_ambitions_pour_cette_année">Mes ambitions pour cette année :</h2><br><ol>
+    <li>L'assimilation de plusieurs language de programmation telque: javaScript, HTML, CSS, C++.</li>
+    <li>La capacité de créer des sites web claire et responsive.</li>
+    <li>Effectuer un stage au sein d'une entreprise afin de pouvoir approfondir mes connaissances et mon savoir-faire.</li>
+    </ol>
+  </section><br><br><br><br><br>
+  <section>
+    <h2 id="Listes_des_amis">Listes des amis :</h2><br>
+    <table border="2" style="margin-right: auto; margin-left: auto; border: 2px solid #000;
+    border-radius: 10px;">
+        <th>Nom</th>
+        <th>Age</th>
+        <th>Ville</th>
+        <th>Lien</th>
+        <tr>
+            <td>Mlle Meryem Erragragui</td>
+            <td>19 ans</td>
+            <td>Casablanca</td>
+            <td><a href="https://merragragui.github.io/mon-profil/"  target="_blank" style="color: blue;">Visiter le site de Mlle Meryem</a></td>
+        </tr>
+    </table>
+  </section><br><br><br><br><br><br><br><br>
+  <section>
+    
+    <form>
+        <h2 id="Formulaire_de_contact" style="color: #fff;">Formulaire de contact :</h2><br>
+        <label>Nom: </label><br>
+        <input type="text"><br><br>
+        <label>Email: </label><br>
+        <input type="email"><br><br>
+        <label>Message: </label><br>
+        <textarea name="msg"></textarea><br><br>
+        <button id="btn">Envoyer</button>
+       </form>
+  </section><br><br>
+<footer>
+    <a><i class='bx bx-copyright'></i> 2024 All right is reserved.</a>
+</footer>
+
+
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('messageError').textContent = '';
+        let name = document.getElementById('name').value.trim();
+        let email = document.getElementById('email').value.trim();
+        let message = document.getElementById('message').value.trim();
+        let isValid = true;
+        if (name === '') {
+            document.getElementById('nameError').textContent = 'Name is required.';
+            isValid = false;
+        }
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (email === '') {
+            document.getElementById('emailError').textContent = 'Email is required.';
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            document.getElementById('emailError').textContent = 'Enter a valid email address.';
+            isValid = false;
+        }
+        if (message === '') {
+            document.getElementById('messageError').textContent = 'Message is required.';
+            isValid = false;
+        }
+        if (isValid) {
+            alert('Form submitted successfully!');
+            document.getElementById('contactForm').reset();
+        }
+    });
+</script>
+
+<a id="bf" href="#">Retour vers le haut</a>
+</body>
+</html>
